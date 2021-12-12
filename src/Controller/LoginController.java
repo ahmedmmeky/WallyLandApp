@@ -1,3 +1,4 @@
+
 package Controller;
 
 import javax.swing.*;
@@ -67,14 +68,11 @@ public class LoginController implements ActionListener {
         Object obj = e.getSource();
         System.out.println(isAct());
         /*        if(obj == loginUI.loginButton && isAct())
-=======
-/*        if(obj == loginUI.loginButton && isAct())
->>>>>>> 73802fb93db1010b374705c247b35877b45f972a
 //        {
 //            System.out.println("test");
 //           navCntrl = new NavigationController();
 //           loginUI.setVisible(false);
-<<<<<<< HEAD
+>>>>>>> 723d179af80c78c0860f2e71b0440a8856a2202b
 //        } else */
         if (obj == loginUI.adminLogin) {
 
@@ -87,3 +85,25 @@ public class LoginController implements ActionListener {
 //            
     }
 }
+/*        if(obj == loginUI.loginButton && isAct())
+//        {
+//            System.out.println("test");
+//           navCntrl = new NavigationController();
+//           loginUI.setVisible(false);
+<<<<<<< HEAD (0cbb1ed) - Login Getter
+
+=======
+//        } else */
+//        if (obj == loginUI.adminLogin) {
+//
+//        } else if (obj == loginUI.adminLogin) {
+//            adminNavCntrl = new AdminNavigationController();
+//            loginUI.setVisible(false);
+//        }/*else if (obj == loginUI.signUpButtonL){
+////            registraCntrl = new RegistrationController();
+////            loginUI.setVisible(false);*/
+//      
+     
+    
+
+
