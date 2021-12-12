@@ -69,7 +69,29 @@ public class ViewTickets extends javax.swing.JFrame {
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, true, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        ticketTable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        ticketTable.getTableHeader().setReorderingAllowed(false);
+        ticketTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ticketTableMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(ticketTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -111,6 +133,10 @@ public class ViewTickets extends javax.swing.JFrame {
     private void menuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_menuBtnActionPerformed
+
+    private void ticketTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ticketTableMouseClicked
+        
+    }//GEN-LAST:event_ticketTableMouseClicked
 
     /**
      * @param args the command line arguments
@@ -167,7 +193,7 @@ public class ViewTickets extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JButton menuBtn;
     public javax.swing.JButton purchaseBtn;
-    private javax.swing.JTable ticketTable;
+    public javax.swing.JTable ticketTable;
     // End of variables declaration//GEN-END:variables
 
     public boolean connectedRestServer(CreditCardInputViewController purCntl) {
