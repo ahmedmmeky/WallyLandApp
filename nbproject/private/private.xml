@@ -3,20 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/felixdadebo/Desktop/IST412/WallyLandApp/src/View/AdminNavigation.java</file>
+            <file>file:/Users/felixdadebo/Desktop/IST412/WallyLandApp/src/Model/Restaurants.java</file>
+            <file>file:/Users/felixdadebo/Desktop/IST412/WallyLandApp/src/Controller/RestaurantOrderController.java</file>
             <file>file:/Users/felixdadebo/Desktop/IST412/WallyLandApp/src/Controller/LoginController.java</file>
-            <file>file:/Users/felixdadebo/Desktop/IST412/WallyLandApp/src/View/LoginPage.java</file>
-            <file>file:/Users/felixdadebo/Desktop/IST412/WallyLandApp/src/View/RegistrationUI.java</file>
-            <file>file:/Users/felixdadebo/Desktop/IST412/WallyLandApp/src/View/RestaurantOrderUI.java</file>
-            <file>file:/Users/felixdadebo/Desktop/IST412/WallyLandApp/src/View/TicketOrderUI.java</file>
-            <file>file:/Users/felixdadebo/Desktop/IST412/WallyLandApp/src/Controller/NavigationController.java</file>
-            <file>file:/Users/felixdadebo/Desktop/IST412/WallyLandApp/src/View/NavigationUI.java</file>
-            <file>file:/Users/felixdadebo/Desktop/IST412/WallyLandApp/src/View/SingleTicketView.java</file>
-            <file>file:/Users/felixdadebo/Desktop/IST412/WallyLandApp/src/View/CreateActivityUI.java</file>
-            <file>file:/Users/felixdadebo/Desktop/IST412/WallyLandApp/src/Controller/AdminNavigationController.java</file>
             <file>file:/Users/felixdadebo/Desktop/IST412/WallyLandApp/src/Controller/RestaurantController.java</file>
-            <file>file:/Users/felixdadebo/Desktop/IST412/WallyLandApp/src/View/RestaurantMenuUI.java</file>
-            <file>file:/Users/felixdadebo/Desktop/IST412/WallyLandApp/src/Controller/CreateActivityController.java</file>
+            <file>file:/Users/felixdadebo/Desktop/IST412/WallyLandApp/src/View/LoginPage.java</file>
         </group>
     </open-files>
 </project-private>

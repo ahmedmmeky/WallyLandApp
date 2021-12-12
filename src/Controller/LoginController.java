@@ -18,7 +18,7 @@ public class LoginController implements ActionListener {
     private AdminNavigationController adminNavCntrl;
     private LoginPage loginUI;
     private LoginController loginCntrl;
-    private RegistrationController registraCntrl;
+   // private RegistrationController registraCntrl;
     private boolean act;
 
     /**
