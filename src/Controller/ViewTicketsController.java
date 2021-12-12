@@ -30,6 +30,7 @@ public class ViewTicketsController implements ActionListener{//will grab tickets
     private CreditCardInputViewController purchaseTicketsCntrl;
     private TicketsOrderController orderTicketsController;
     private ViewTickets viewTicketsUI;
+    private SingleTicketViewController singleView;
     
     
     /**
@@ -119,6 +120,8 @@ public class ViewTicketsController implements ActionListener{//will grab tickets
         viewTicketsUI.setTicketTable(ticketTable);
     }
     
+
+    
     /**
      * Action Events for buttons
      * @param e representing an Action Event
@@ -135,6 +138,25 @@ public class ViewTicketsController implements ActionListener{//will grab tickets
             orderTicketsController = new TicketsOrderController(navCntrl);
             viewTicketsUI.setVisible(false);
         }
+        
+        viewTicketsUI.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt, ViewTicketsController viewTicketsController) {
+                int row = viewTicketsUI.ticketTable.rowAtPoint(evt.getPoint());
+                
+                if (row >= 0) {
+                    String id = (String)viewTicketsUI.ticketTable.getValueAt(row, 1);
+                    String user = (String)viewTicketsUI.ticketTable.getValueAt(row, 2);
+                    String type = (String)viewTicketsUI.ticketTable.getValueAt(row, 3);
+                    String purchaseDate = (String)viewTicketsUI.ticketTable.getValueAt(row, 4);
+                    String expDate = (String)viewTicketsUI.ticketTable.getValueAt(row, 5);
+                    Double price =  (Double)viewTicketsUI.ticketTable.getValueAt(row, 6);
+                    
+                    singleView.setTicketValues(id, user, type, purchaseDate, expDate, price);
+                    viewTicketsUI.setVisible(false);
+                    singleView = new SingleTicketViewController(navCntrl, viewTicketsController);
+                }
+            }
+        });
     }
 
     public boolean connectedUserClient(ViewTickets viewUI) {
