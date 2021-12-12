@@ -6,6 +6,7 @@
 package View;
 
 import Controller.ViewTicketsController;
+import javax.swing.JLabel;
 
 /**
  *
@@ -19,6 +20,54 @@ public class SingleTicketView extends javax.swing.JFrame {
     public SingleTicketView() {
         initComponents();
     }
+
+    public JLabel getDatePurchasedField() {
+        return datePurchasedField;
+    }
+    public void setDatePurchasedField(String datePurchased) {
+        this.datePurchasedField.setText(datePurchased);
+    }
+    
+
+    public JLabel getExpDateField() {
+        return expDateField;
+    }
+    public void setExpDateField(String expDate) {
+        this.expDateField.setText(expDate);
+    }
+    
+
+    public JLabel getIdField() {
+        return idField;
+    }
+    public void setIdField(String ID) {
+        this.idField.setText(ID);
+    }
+
+    public JLabel getPriceField() {
+        return priceField;
+    }
+    public void setPriceField(Double price) {
+        this.priceField.setText(String.format("%.2f", price));
+    }
+
+    
+    public JLabel getTicketTypeField() {
+        return ticketTypeField;
+    }
+    public void setTicketTypeField(String type) {
+        this.ticketTypeField.setText(type);
+    }
+
+    
+    public JLabel getUserField() {
+        return userField;
+    }
+    public void setUserField(String user) {
+        this.userField.setText(user);
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,12 +84,18 @@ public class SingleTicketView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         backBtn = new javax.swing.JButton();
         menuBtn = new javax.swing.JButton();
-        userText = new javax.swing.JLabel();
-        ticketTypeText = new javax.swing.JLabel();
-        dateText = new javax.swing.JLabel();
+        userField = new javax.swing.JLabel();
+        ticketTypeField = new javax.swing.JLabel();
+        datePurchasedField = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        idField = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        expDateField = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        priceField = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,17 +115,29 @@ public class SingleTicketView extends javax.swing.JFrame {
             }
         });
 
-        userText.setText("jLabel2");
+        userField.setText("jLabel2");
 
-        ticketTypeText.setText("jLabel3");
+        ticketTypeField.setText("jLabel3");
 
-        dateText.setText("jLabel4");
+        datePurchasedField.setText("jLabel4");
 
         jLabel5.setText("User:");
 
         jLabel6.setText("Type:");
 
         jLabel7.setText("Date Purchased:");
+
+        jLabel2.setText("ID:");
+
+        idField.setText("jLabel3");
+
+        jLabel4.setText("Exp Date:");
+
+        expDateField.setText("jLabel8");
+
+        jLabel9.setText("Price:");
+
+        priceField.setText("jLabel10");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -83,24 +150,26 @@ public class SingleTicketView extends javax.swing.JFrame {
                 .addComponent(menuBtn)
                 .addGap(37, 37, 37))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(20, 83, Short.MAX_VALUE)
+                .addGap(20, 80, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(130, 130, 130))
             .addGroup(layout.createSequentialGroup()
                 .addGap(100, 100, 100)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(18, 18, 18)
-                        .addComponent(dateText))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(18, 18, 18)
-                        .addComponent(ticketTypeText))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(18, 18, 18)
-                        .addComponent(userText)))
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel7))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ticketTypeField)
+                    .addComponent(userField)
+                    .addComponent(idField)
+                    .addComponent(datePurchasedField)
+                    .addComponent(expDateField)
+                    .addComponent(priceField))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -108,19 +177,31 @@ public class SingleTicketView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
+                .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(userText)
-                    .addComponent(jLabel5))
-                .addGap(28, 28, 28)
+                    .addComponent(jLabel2)
+                    .addComponent(idField))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ticketTypeText)
-                    .addComponent(jLabel6))
-                .addGap(35, 35, 35)
+                    .addComponent(jLabel5)
+                    .addComponent(userField))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dateText)
-                    .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                    .addComponent(jLabel6)
+                    .addComponent(ticketTypeField))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(datePurchasedField))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(expDateField))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(priceField))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backBtn)
                     .addComponent(menuBtn))
@@ -241,14 +322,20 @@ public class SingleTicketView extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
-    private javax.swing.JLabel dateText;
+    private javax.swing.JLabel datePurchasedField;
+    private javax.swing.JLabel expDateField;
+    private javax.swing.JLabel idField;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
     public javax.swing.JButton menuBtn;
-    private javax.swing.JLabel ticketTypeText;
-    private javax.swing.JLabel userText;
+    private javax.swing.JLabel priceField;
+    private javax.swing.JLabel ticketTypeField;
+    private javax.swing.JLabel userField;
     // End of variables declaration//GEN-END:variables
 
     public boolean connectedRestServer(ViewTicketsController viewCntl) {

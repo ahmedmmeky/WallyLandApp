@@ -2,7 +2,7 @@ package Controller;
 
 import Controller.CreditCardInputViewController;
 import Controller.SingleTicketViewController;
-import View.ViewTickets;
+import View.SingleTicketView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /**
@@ -11,24 +11,29 @@ import java.awt.event.ActionListener;
  */
 public class SingleTicketViewController implements ActionListener{//will grab tickets based on a verified user and control from here
     private NavigationController navCntrl;
-    private CreditCardInputViewController purchaseTicketsCntrl;
-    private ViewTickets viewTicketsUI;
+    private ViewTicketsController viewTixCntl;
+    private SingleTicketView singleViewUI;
     
     /**
      * Constructor for the view tickets controller class
      * @param navCntrl instance of the navigation controller
      * @param purchaseTicketsCntrl instance of the purchase tickets controller
      */
-    public SingleTicketViewController(NavigationController navCntrl, CreditCardInputViewController purchaseTicketsCntrl) {
+    public SingleTicketViewController(NavigationController navCntrl, ViewTicketsController viewTixCntl) {
         this.navCntrl = navCntrl;
-        this.purchaseTicketsCntrl = purchaseTicketsCntrl;
-        viewTicketsUI = new ViewTickets();
-        viewTicketsUI.menuBtn.addActionListener(this);
-        viewTicketsUI.setVisible(true);
+        this.viewTixCntl = viewTixCntl;
+        singleViewUI = new SingleTicketView();
+        singleViewUI.menuBtn.addActionListener(this);
+        singleViewUI.setVisible(true);
     }
-
-    public SingleTicketViewController() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public void setTicketValues(String id, String user, String type, String purchaseDate, String expDate, Double price) {
+        singleViewUI.setIdField(id);
+        singleViewUI.setUserField(user);
+        singleViewUI.setTicketTypeField(type);
+        singleViewUI.setDatePurchasedField(purchaseDate);
+        singleViewUI.setExpDateField(expDate);
+        singleViewUI.setPriceField(price);
     }
     
     /**
@@ -38,14 +43,19 @@ public class SingleTicketViewController implements ActionListener{//will grab ti
     @Override
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
-        if(obj == viewTicketsUI.menuBtn)
+        if(obj == singleViewUI.menuBtn)
         {
             navCntrl = new NavigationController();
-            viewTicketsUI.setVisible(false);
+            singleViewUI.setVisible(false);
+        }
+        else if(obj == singleViewUI.backBtn)
+        {
+            viewTixCntl = new ViewTicketsController(navCntrl);
+            singleViewUI.setVisible(false);
         }
     }
 
-    public boolean connectedUserClient(ViewTickets viewUI) {
+    public boolean connectedUserClient(SingleTicketView singleUI) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

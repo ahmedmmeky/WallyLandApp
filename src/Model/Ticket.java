@@ -13,7 +13,6 @@ import java.util.UUID;
  */
 public abstract class Ticket {
     protected double price;
-    protected boolean paid = false;
     protected UUID Id;
     protected LocalDate startDate = LocalDate.now();
     protected int daysActive;
@@ -36,14 +35,6 @@ public abstract class Ticket {
 
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    public boolean isPaid() {
-        return paid;
-    }
-
-    public void setPaid(boolean paid) {
-        this.paid = paid;
     }
 
     public UUID getId() {
