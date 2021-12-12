@@ -44,6 +44,8 @@ public class LoginController implements ActionListener {
         loginUI = loginInterface;
         return true;
     }
+    
+    
 
     public boolean isAct() {
         return act;
