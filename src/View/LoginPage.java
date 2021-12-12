@@ -21,7 +21,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-
 /**
  *
  * @author hayde
@@ -69,9 +68,9 @@ public class LoginPage extends javax.swing.JFrame {
         adminLogin = new javax.swing.JButton();
         signUpButtonL = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 255));
@@ -134,11 +133,12 @@ public class LoginPage extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel3.setText("Password:");
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-iOS-Email Open.png"))); // NOI18N
-
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-iOS-Email Open.png"))); // NOI18N
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-Gradient-Theme Park.png"))); // NOI18N
+
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Email Open.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -160,15 +160,16 @@ public class LoginPage extends javax.swing.JFrame {
                                 .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(19, 19, 19)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel2))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel3)))
+                                        .addComponent(jLabel3))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel2)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jTextField1)
@@ -182,24 +183,22 @@ public class LoginPage extends javax.swing.JFrame {
                 .addComponent(signUpButtonL, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addGap(42, 42, 42)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel2))
-                            .addComponent(jLabel5))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(27, 27, 27)
-                                .addComponent(PasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel6))))
-                    .addComponent(jLabel3))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8))
+                        .addGap(42, 42, 42)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2)))
+                    .addComponent(jLabel7))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(PasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3)))
+                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(55, 55, 55)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(adminLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -242,23 +241,18 @@ public class LoginPage extends javax.swing.JFrame {
         int size = jrr.size();
         obj.put("Email", jTextField1.getText());
         obj.put("Password", PasswordField1.getText());
-        
-        
-        
-       // obj.put("Email", jTextField1.getText(userText.setText()));
 
+        // obj.put("Email", jTextField1.getText(userText.setText()));
         // obj.put("Password", PasswordField1.getPassword());
-
         jrr.add(obj);
 
         for (int i = 0; i < size; i++) {
-            
+
 //            if (i == null){
 //                   JOptionPane.showMessageDialog(null, "Password Matched");
 //            }
-             if (obj.equals(jrr.get(i))){
-                
-                
+            if (obj.equals(jrr.get(i))) {
+
                 JOptionPane.showMessageDialog(null, "Password Matched");
 
 //           NavigationUI navigation = new NavigationUI();
@@ -266,9 +260,8 @@ public class LoginPage extends javax.swing.JFrame {
 //           navigation.setVisible(true);
                 navCntrl = new NavigationController();
                 break;
-            
-            
-            } else if (i == size - 1 ) {
+
+            } else if (i == size - 1) {
                 JOptionPane.showMessageDialog(null, "Wrong EmailAddress/Password!!");
                 loginCntrl.setAct(false);
             }
@@ -290,32 +283,42 @@ public class LoginPage extends javax.swing.JFrame {
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Error occured");
         }
-        
-        
-        obj.put("Email", jTextField1.getText());
-        obj.put("Password", PasswordField1.getText());
-        // obj.put("Password", PasswordField1.getPassword());
-        
-//        if(obj.equals("")){
-//           JOptionPane.showMessageDialog(null, "Error occured");
-//        }
-//        else{
-//            jrr.add(obj);
-//        }
 
-        //obj.put("FirstName", jTextField2.getText());
-        //obj.put("LastName", jTextField3.getText());
-        //obj.put("Password", PasswordField4.getPassword());
-        try {
-            FileWriter file = new FileWriter("UserData.json");
-            file.write(jrr.toJSONString());
-            file.close();
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Error occured");
+        String currentEmail = jTextField1.getText();
+        String currentPassword = PasswordField1.getText();
 
+        if (currentEmail.equals("") && currentPassword.equals("")) {
+            JOptionPane.showMessageDialog(null, "Enter Email and Password");
+            
+        }
+        else if(currentEmail.equals("") && currentPassword.equals("")){
+             JOptionPane.showMessageDialog(null, "Enter Email Address");
+
+        }  
+        else if(currentEmail.equals("") && currentPassword.equals("")){
+             JOptionPane.showMessageDialog(null, "Enter Password");
+        } 
+        else {
+            obj.put("Email", currentEmail);
+            obj.put("Password", currentPassword);
+
+            jrr.add(obj);
+
+            //obj.put("FirstName", jTextField2.getText());
+            //obj.put("LastName", jTextField3.getText());
+            //obj.put("Password", PasswordField4.getPassword());
+            try {
+                FileWriter file = new FileWriter("UserData.json");
+                file.write(jrr.toJSONString());
+                file.close();
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Error occured");
+
+            } 
+            JOptionPane.showMessageDialog(null, "Infomation Saved");
         }
 
-        JOptionPane.showMessageDialog(null, "Infomation Saved"); // TODO add your handling code here:
+        // TODO add your handling code here:
 
     }//GEN-LAST:event_signUpButtonLActionPerformed
 
@@ -323,13 +326,11 @@ public class LoginPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_PasswordField1ActionPerformed
 
-    
     public JTextField getCurrentUser() {
         return jTextField1;
     }
 
-    
-      
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField PasswordField1;
     public javax.swing.JButton adminLogin;
@@ -337,8 +338,8 @@ public class LoginPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     public static javax.swing.JTextField jTextField1;
