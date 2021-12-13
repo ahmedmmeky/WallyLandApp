@@ -65,26 +65,21 @@ public class RestaurantOrderController implements ActionListener {
             menuCntrl = new RestaurantController(navCntrl);
             orderUI.setVisible(false);
         }
-        if(obj == orderUI.orderBtn)
-        {
+        if (obj == orderUI.orderBtn) {
             boolean verified = true;
-            if(orderUI.getCardNumberValue().getText().equals("") || orderUI.getCardNumberValue().getText().equals("**Required**"))
-            {
+            if (orderUI.getCardNumberValue().getText().equals("") || orderUI.getCardNumberValue().getText().equals("**Required**")) {
                 orderUI.setCardNumberValue("**Required**");
                 verified = false;
             }
-            if(orderUI.getCvvValue().getText().equals("") || orderUI.getCvvValue().getText().equals("**Required**"))
-            {
+            if (orderUI.getCvvValue().getText().equals("") || orderUI.getCvvValue().getText().equals("**Required**")) {
                 orderUI.setCvvValue("**Required**");
                 verified = false;
             }
-            if(orderUI.getExpirationValue().getText().equals("") || orderUI.getExpirationValue().getText().equals("**Required**"))
-            {
+            if (orderUI.getExpirationValue().getText().equals("") || orderUI.getExpirationValue().getText().equals("**Required**")) {
                 orderUI.setExpirationValue("**Required**");
                 verified = false;
             }
-            if(verified)
-            {
+            if (verified) {
                 navCntrl = new NavigationController();
                 orderUI.setVisible(false);
             }

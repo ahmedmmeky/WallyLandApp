@@ -17,33 +17,37 @@ import javax.swing.SpinnerNumberModel;
  * @author bpardee
  */
 public class TicketOrderUI extends javax.swing.JFrame {
+
     private TicketsOrderController orderCntrl;
     private Ticket ticket;
     private TicketOrderUI menuUI;
     private SeasonTicket seasonTix;
     private DayTicket dayTix;
     private WeekTicket weekTix;
+
     /**
      * Creates new form RestaurantMenuUI
+     *
      * @param restCntrl references the Restaurant Controller class
      * @param restaurant references the Restaurants class
      */
-    public TicketOrderUI(TicketsOrderController orderCntrl, SeasonTicket seasonTix, WeekTicket weekTix, DayTicket dayTix){
+    public TicketOrderUI(TicketsOrderController orderCntrl, SeasonTicket seasonTix, WeekTicket weekTix, DayTicket dayTix) {
         this.orderCntrl = orderCntrl;
         /*this.ticket = ticket;*/
         initComponents();
         progressBar = new javax.swing.JProgressBar(0, 100);
         jPanel2.add(progressBar);
-        progressBar.setSize(350,40);
+        progressBar.setSize(350, 40);
         progressBar.setValue(2);
         progressBar.setVisible(true);
     }
-    
+
     /**
      * Method to connect to our RestaurantController
+     *
      * @param restController a menu
      * @return the connection status
-     */   
+     */
     public boolean connectedRestServer(TicketsOrderController orderController) {
         orderCntrl = orderController;
         return true;
@@ -51,11 +55,11 @@ public class TicketOrderUI extends javax.swing.JFrame {
 
     /*Getters and setters for Season Ticket price, title, and amount as indicated
     by the spinner
-    */
-    
+     */
     public JLabel getSeasonTicketItem() {
         return seasonTicketItem;
     }
+
     public void setSeasonTicketItem(String seasonTicketItem) {
         this.seasonTicketItem.setText(seasonTicketItem);
     }
@@ -63,74 +67,85 @@ public class TicketOrderUI extends javax.swing.JFrame {
     public JLabel getSeasonTicketPrice() {
         return seasonTicketPrice;
     }
-    public void setSeasonTicketPrice(Double seasonTicketPrice){
+
+    public void setSeasonTicketPrice(Double seasonTicketPrice) {
         this.seasonTicketPrice.setText(String.format("%.2f", seasonTicketPrice));
     }
+
     public JSpinner getSeasonTixAmt() {
         return seasonTixAmt;
     }
+
     public void setSeasonTixAmt(JSpinner seasonTixAmt) {
         this.seasonTixAmt = seasonTixAmt;
     }
 
     /*Getters and setters for Week Ticket price, title, and amount as indicated
     by the spinner
-    */
-    
+     */
     public JLabel getWeekTicketItem() {
         return weekTicketItem;
     }
+
     public void setWeekTicketItem(String weekTicketItem) {
         this.weekTicketItem.setText(weekTicketItem);
     }
+
     public JLabel getWeekTicketPrice() {
         return weekTicketPrice;
     }
+
     public void setWeekTicketPrice(Double weekTicketPrice) {
         this.weekTicketPrice.setText(String.format("%.2f", weekTicketPrice));
     }
+
     public JSpinner getWeekTixAmt() {
         return weekTixAmt;
     }
+
     public void setWeekTixAmt(JSpinner weekTixAmt) {
         this.weekTixAmt = weekTixAmt;
     }
-    
+
     /*Getters and setters for Week Ticket price, title, and amount as indicated
     by the spinner
-    */
-    
+     */
     public JLabel getDayTicketItem() {
         return dayTicketItem;
     }
+
     public void setDayTicketItem(String dayTicketItem) {
         this.dayTicketItem.setText(dayTicketItem);
     }
+
     public JLabel getDayTicketPrice() {
         return dayTicketPrice;
     }
+
     public void setDayTicketPrice(Double dayTicketPrice) {
         this.dayTicketPrice.setText(String.format("%.2f", dayTicketPrice));
     }
+
     public JSpinner getDayTixAmt() {
         return dayTixAmt;
     }
+
     public void setDayTixAmt(JSpinner dayTixAmt) {
         this.dayTixAmt = dayTixAmt;
     }
 
-    
     public JButton getMenuBtn() {
         return menuBtn;
     }
+
     public void setMenuBtn(JButton menuBtn) {
         this.menuBtn = menuBtn;
     }
-    
-    
+
     public JLabel getMenuTitle() {
         return menuTitle;
     }
+
     public void setMenuTitle(JLabel menuTitle) {
         this.menuTitle = menuTitle;
     }
@@ -336,4 +351,4 @@ public class TicketOrderUI extends javax.swing.JFrame {
     private javax.swing.JLabel weekTicketPrice;
     private javax.swing.JSpinner weekTixAmt;
     // End of variables declaration//GEN-END:variables
-    }
+}

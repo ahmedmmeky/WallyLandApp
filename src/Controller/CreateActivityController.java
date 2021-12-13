@@ -15,16 +15,16 @@ import Model.ActivityList;
  *
  * @author meky
  */
-public class CreateActivityController implements ActionListener{
-    
+public class CreateActivityController implements ActionListener {
+
     private CreateActivityUI createActivityUI;
     private AdminNavigationController adminNavCntrl;
     private ManageActivityController manageActivityCntl;
     //private LoginController loginCntrl;
-    
+
     /**
-     * Constructor for the Navigation Controller
-     * used to instantiate aspects of the controller
+     * Constructor for the Navigation Controller used to instantiate aspects of
+     * the controller
      */
     public CreateActivityController() {
         createActivityUI = new CreateActivityUI(this);
@@ -32,17 +32,17 @@ public class CreateActivityController implements ActionListener{
         createActivityUI.saveButton.addActionListener(this);
         createActivityUI.setVisible(true);
     }
-    
-     /**
+
+    /**
      * Method to 'connect' to our user
+     *
      * @param navInterface a user interface which can view the main menu
      * @return the connection status
-     */    
+     */
     public boolean connectedUserClient(CreateActivityUI createActivityNav) {
         createActivityUI = createActivityNav;
         return true;
     }
-
 
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
@@ -62,5 +62,5 @@ public class CreateActivityController implements ActionListener{
             createActivityUI.setVisible(false);
         }
     }
-    
+
 }

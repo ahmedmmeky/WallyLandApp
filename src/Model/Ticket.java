@@ -4,14 +4,17 @@
  * and open the template in the editor.
  */
 package Model;
+
 import java.util.Date;
 import java.time.LocalDate;
 import java.util.UUID;
+
 /**
  *
  * @author Hayden
  */
 public abstract class Ticket {
+
     protected double price;
     protected UUID Id;
     protected LocalDate startDate = LocalDate.now();

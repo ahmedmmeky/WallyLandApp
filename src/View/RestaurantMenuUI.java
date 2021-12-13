@@ -669,4 +669,4 @@ public class RestaurantMenuUI extends javax.swing.JFrame {
     private javax.swing.JLabel menuTitle;
     public javax.swing.JButton reviewOrderBtn;
     // End of variables declaration//GEN-END:variables
-    }
+}

@@ -5,6 +5,7 @@
  */
 package View;
 
+import Controller.AdminNavigationController;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
@@ -30,6 +31,7 @@ public class LoginPage extends javax.swing.JFrame {
 
     private LoginController loginCntrl;
     private NavigationController navCntrl;
+    private AdminNavigationController adminNavUI;
 
     /**
      * Creates new form viewTickets
@@ -53,10 +55,6 @@ public class LoginPage extends javax.swing.JFrame {
     public static String getEmail() {
         return Email.getText();
     }
-
-   
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -259,7 +257,52 @@ public class LoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void adminLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminLoginActionPerformed
-// TODO add your handling code here:
+// TODO add your handling code hereJSONArray jrr = new JSONArray();
+        JSONArray jrr = new JSONArray();
+        JSONParser Jp = new JSONParser();
+
+        Object ob = null;
+
+        try {
+            FileReader file = new FileReader("UserData.json");
+            ob = Jp.parse(file);
+            jrr = (JSONArray) ob;
+            file.close();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Error Occured While fetching");
+        }
+
+        JSONObject obj = new JSONObject();
+        int size = jrr.size();
+        obj.put("Email", Email.getText());
+        obj.put("Password", PasswordField1.getText());
+
+        // obj.put("Email", jTextField1.getText(userText.setText()));
+        // obj.put("Password", PasswordField1.getPassword());
+        jrr.add(obj);
+
+        for (int i = 0; i < size; i++) {
+
+//            if (i == null){
+//                   JOptionPane.showMessageDialog(null, "Password Matched");
+//            }
+            if (obj.equals(jrr.get(i))) {
+
+                JOptionPane.showMessageDialog(null, "Password Matched");
+
+//           NavigationUI navigation = new NavigationUI();
+//           //navigation = getNavCntrl().getNavgiationUI();
+//           navigation.setVisible(true);
+                // navCntrl = new NavigationController();
+                adminNavUI = new AdminNavigationController();
+                break;
+
+            } else if (i == size - 1) {
+                JOptionPane.showMessageDialog(null, "Wrong EmailAddress/Password!!");
+                loginCntrl.setAct(false);
+            }
+        }  // TODO add your handling code here:
+
     }//GEN-LAST:event_adminLoginActionPerformed
 
     private void signUpButtonLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpButtonLActionPerformed
@@ -279,15 +322,12 @@ public class LoginPage extends javax.swing.JFrame {
 
         if (currentEmail.equals("") && currentPassword.equals("")) {
             JOptionPane.showMessageDialog(null, "Enter Email and Password");
-            
-        }
-        else if(currentEmail.equals("")){
-             JOptionPane.showMessageDialog(null, "Enter Email Address");
-        }  
-        else if(currentPassword.equals("")){
-             JOptionPane.showMessageDialog(null, "Enter Password");
-        } 
-        else {
+
+        } else if (currentEmail.equals("")) {
+            JOptionPane.showMessageDialog(null, "Enter Email Address");
+        } else if (currentPassword.equals("")) {
+            JOptionPane.showMessageDialog(null, "Enter Password");
+        } else {
             obj.put("Email", currentEmail);
             obj.put("Password", currentPassword);
 
@@ -303,12 +343,11 @@ public class LoginPage extends javax.swing.JFrame {
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, "Error occured");
 
-            } 
+            }
             JOptionPane.showMessageDialog(null, "Infomation Saved");
         }
 
         // TODO add your handling code here:
-
     }//GEN-LAST:event_signUpButtonLActionPerformed
 
     private void PasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordField1ActionPerformed
@@ -318,7 +357,6 @@ public class LoginPage extends javax.swing.JFrame {
     public JTextField getCurrentUser() {
         return Email;
     }
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JTextField Email;

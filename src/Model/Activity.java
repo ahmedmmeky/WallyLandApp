@@ -31,18 +31,17 @@ public class Activity {
         this.description = description;
         this.timeslot = timeslot;
     }
-    
+
     public Activity(String name, int capacity, String description) {
         this.name = name;
         this.capacity = capacity;
         this.description = description;
     }
-    
-  /**
-   * 
-   * @return get the name of a park activity 
-   */
 
+    /**
+     *
+     * @return get the name of a park activity
+     */
     /**
      *
      * @return get the name of a park activity

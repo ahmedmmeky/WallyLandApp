@@ -1,4 +1,3 @@
-
 package Controller;
 
 import javax.swing.*;
@@ -45,8 +44,6 @@ public class LoginController implements ActionListener {
         loginUI = loginInterface;
         return true;
     }
-    
-    
 
     public boolean isAct() {
         return act;
@@ -56,8 +53,6 @@ public class LoginController implements ActionListener {
         this.act = act;
     }
 
-    
-    
     /**
      * Action Events for buttons
      *
@@ -103,7 +98,4 @@ public class LoginController implements ActionListener {
 ////            registraCntrl = new RegistrationController();
 ////            loginUI.setVisible(false);*/
 //      
-     
-    
-
 

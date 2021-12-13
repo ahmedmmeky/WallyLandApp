@@ -14,11 +14,10 @@ import java.util.UUID;
  * @author hayde
  */
 public class DayTicket extends Ticket {
+
     private double price = 59.99;
     private int daysActive = 1;
     private String type = "Day";
-    
-    
 
     public DayTicket(/*double price, boolean paid, UUID Id, LocalDate startDate, int daysActive, LocalDate expDate, String type*/) {
 //        super(price, paid, Id, startDate, daysActive, expDate, type);
@@ -56,9 +55,5 @@ public class DayTicket extends Ticket {
     public void setType(String type) {
         this.type = type;
     }
-    
 
-    
-    
-    
 }
