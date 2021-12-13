@@ -4,14 +4,17 @@
  * and open the template in the editor.
  */
 package Model;
+
 import java.util.Date;
 import java.time.LocalDate;
 import java.util.UUID;
+
 /**
  *
  * @author hayde
  */
 public class SeasonTicket extends Ticket {
+
     private double price = 499.99;
     private int daysActive = 80;
     private String type = "Season";
@@ -52,6 +55,5 @@ public class SeasonTicket extends Ticket {
     public void setType(String type) {
         this.type = type;
     }
-    
- 
+
 }

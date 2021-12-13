@@ -40,7 +40,6 @@ public class User {
         this.lastName = "";
         this.password = "";
     }
-    
 
     /**
      * getter for email
@@ -104,7 +103,6 @@ public class User {
     public String getPassword() {
         return password;
     }
-    
 
     /**
      * setter for password

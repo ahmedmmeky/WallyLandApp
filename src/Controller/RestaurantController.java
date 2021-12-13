@@ -28,7 +28,7 @@ public class RestaurantController implements ActionListener {
      */
     public RestaurantController(NavigationController navCntrl) {
         this.navCntrl = navCntrl;
-        restaurant = new Restaurants("Park Restaurant", 
+        restaurant = new Restaurants("Park Restaurant",
                 new ArrayList<String>(Arrays.asList("Hamburger", "Cheeseburger", "Mac and Cheese", "Hot Dog", "Pulled Pork", "Nachos", "French Fries")),
                 new ArrayList<Double>(Arrays.asList(4.99, 5.99, 4.99, 2.99, 5.99, 3.99, 2.99)),
                 20);
@@ -101,7 +101,7 @@ public class RestaurantController implements ActionListener {
             orderCntrl = new RestaurantOrderController(this);
             menuUI.setVisible(false);
         }
-        if(obj == menuUI.backBtn) {
+        if (obj == menuUI.backBtn) {
             navCntrl = new NavigationController();
             menuUI.setVisible(false);
         }

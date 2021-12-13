@@ -21,21 +21,22 @@ import org.json.simple.JSONObject;
  * @author hayde
  */
 public class CreditCardInputViewController implements ActionListener {
+
     private CreditCardInputView purchaseTix;
     private ViewTicketsController viewTix;
     private NavigationController navCntrl;
     private TicketsOrderController ticketOrders;
-    
+
     //need a user
     private ArrayList<Ticket> orderedTicketList;
     private Double orderTotal;
     private JFrame warningFrame = new JFrame("Warning Frame");
-    
-        public CreditCardInputViewController(NavigationController navCntrl, TicketsOrderController ticketOrders, ArrayList<Ticket> orderedTickets) {
+
+    public CreditCardInputViewController(NavigationController navCntrl, TicketsOrderController ticketOrders, ArrayList<Ticket> orderedTickets) {
         this.navCntrl = navCntrl;
         this.ticketOrders = ticketOrders;
         this.orderedTicketList = orderedTickets;
-        
+
         //need a user
         purchaseTix = new CreditCardInputView();
         purchaseTix.myTicketsBuy.addActionListener(this);
@@ -44,43 +45,43 @@ public class CreditCardInputViewController implements ActionListener {
         purchaseTix.setVisible(true);
         //System.out.println("pre-order");
         setOrderTotal();
-        
+
     }
-        public void setOrderTotal(){
-            //System.out.println("In orders");
-            double orderTotal = ticketOrders.getTicketOrders();
-            System.out.println(orderTotal);
-            purchaseTix.setTicketOrderTotal(orderTotal);
-        }
-        
-        public void writeTicketListToJson(ArrayList<Ticket> orders, User currentUser){
-            
-            JSONArray ticketsToWrite = new JSONArray();
-            
-            for(Ticket t : orders){
-                JSONObject currentTicket = new JSONObject();
-                JSONObject ticketDetails = new JSONObject();
-                
-                ticketDetails.put("ID", t.getId());
-                ticketDetails.put("User", currentUser);
-                ticketDetails.put("Type", t.getType());
-                ticketDetails.put("Purchase Date", t.getStartDate());
-                ticketDetails.put("Exp Date", t.getExpDate());
-                ticketDetails.put("Price", t.getPrice());
-                
-                currentTicket.put("ticket", ticketDetails);
-                ticketsToWrite.add(currentTicket);
-            }
-            
-             try(FileWriter file = new FileWriter("tickets.json")){
-                    file.write(ticketsToWrite.toJSONString());
-                    file.flush();
-                } catch (IOException e) {
-                    e.printStackTrace();
-        }
+
+    public void setOrderTotal() {
+        //System.out.println("In orders");
+        double orderTotal = ticketOrders.getTicketOrders();
+        System.out.println(orderTotal);
+        purchaseTix.setTicketOrderTotal(orderTotal);
+    }
+
+    public void writeTicketListToJson(ArrayList<Ticket> orders, User currentUser) {
+
+        JSONArray ticketsToWrite = new JSONArray();
+
+        for (Ticket t : orders) {
+            JSONObject currentTicket = new JSONObject();
+            JSONObject ticketDetails = new JSONObject();
+
+            ticketDetails.put("ID", t.getId());
+            ticketDetails.put("User", currentUser);
+            ticketDetails.put("Type", t.getType());
+            ticketDetails.put("Purchase Date", t.getStartDate());
+            ticketDetails.put("Exp Date", t.getExpDate());
+            ticketDetails.put("Price", t.getPrice());
+
+            currentTicket.put("ticket", ticketDetails);
+            ticketsToWrite.add(currentTicket);
         }
 
-    
+        try (FileWriter file = new FileWriter("tickets.json")) {
+            file.write(ticketsToWrite.toJSONString());
+            file.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * getter for purchased tickets
      *
@@ -110,12 +111,13 @@ public class CreditCardInputViewController implements ActionListener {
 
     /**
      * setter for view tickets
+     *
      * @param viewTix sets variable of ViewTicketsController type
      */
     public void setViewTix(ViewTicketsController viewTix) {
         this.viewTix = viewTix;
     }
-    
+
     /**
      * Action Events for buttons
      *
@@ -124,29 +126,21 @@ public class CreditCardInputViewController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
-        if(obj == purchaseTix.myTicketsBuy)
-        {
+        if (obj == purchaseTix.myTicketsBuy) {
             viewTix = new ViewTicketsController(navCntrl);
             purchaseTix.setVisible(false);
-        }
-        else if (obj == purchaseTix.submitBuyTickets) {
-            if(purchaseTix.creditCardField.getText().length() != 16){
-            JOptionPane.showMessageDialog(warningFrame, "Please Enter a Valid Credit Card Number");
-        }
-        else if(purchaseTix.ccvField.getText().length() != 3){
-            JOptionPane.showMessageDialog(warningFrame, "Please Enter a Valid CCV Number");
-        }
-        else if(purchaseTix.expField.getText().length() != 5){
-            JOptionPane.showMessageDialog(warningFrame, "Please Enter a Valid EXP Date");
-        }
-        else{
-            navCntrl = new NavigationController();
-            purchaseTix.setVisible(false);
-        }
-        }
- 
-        else if(obj == purchaseTix.menuBtn)
-        {
+        } else if (obj == purchaseTix.submitBuyTickets) {
+            if (purchaseTix.creditCardField.getText().length() != 16) {
+                JOptionPane.showMessageDialog(warningFrame, "Please Enter a Valid Credit Card Number");
+            } else if (purchaseTix.ccvField.getText().length() != 3) {
+                JOptionPane.showMessageDialog(warningFrame, "Please Enter a Valid CCV Number");
+            } else if (purchaseTix.expField.getText().length() != 5) {
+                JOptionPane.showMessageDialog(warningFrame, "Please Enter a Valid EXP Date");
+            } else {
+                navCntrl = new NavigationController();
+                purchaseTix.setVisible(false);
+            }
+        } else if (obj == purchaseTix.menuBtn) {
             navCntrl = new NavigationController();
             purchaseTix.setVisible(false);
         }

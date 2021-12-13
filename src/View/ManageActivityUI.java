@@ -24,39 +24,36 @@ public class ManageActivityUI extends javax.swing.JFrame {
 
     private ManageActivityController manageActivityCntl;
     private AdminNavigationController adminNavCntl;
-    
-    
+
     private JPanel tablePanel, buttonPanel;
     private JButton backButton;
     //newButton;
     private JScrollPane tableScroller;
     private JTable activityTable;
+
     /**
      * Creates new form ManageActivityUI
      */
-    
-    
     public ManageActivityUI() {
         //this.manageActivityCntl = manageActivityCntl;
         initComponents();
     }
-    
+
     public ManageActivityUI(ManageActivityController manageActivityController) {
         this.manageActivityCntl = manageActivityController;
-        initComponents(); 
+        initComponents();
         myInitComponents();
     }
-    
-    
+
     public boolean connectedRestServer(ManageActivityController manageActivityController) {
         this.manageActivityCntl = manageActivityController;
         return true;
     }
-    
+
     public void myInitComponents() {
         this.setTitle("Activity List");
         tablePanel = new JPanel();
-        buttonPanel = new JPanel(new GridLayout(1,4));
+        buttonPanel = new JPanel(new GridLayout(1, 4));
         activityTable = new JTable(manageActivityCntl.getActivityTableModel());
         activityTable.getColumnModel().getColumn(0).setPreferredWidth(25);
         activityTable.getColumnModel().getColumn(1).setPreferredWidth(50);
@@ -72,7 +69,7 @@ public class ManageActivityUI extends javax.swing.JFrame {
         tableScroller = new JScrollPane(activityTable);
         activityTable.setFillsViewportHeight(true);
         tableScroller.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        tableScroller.setPreferredSize(new Dimension(700,600));
+        tableScroller.setPreferredSize(new Dimension(700, 600));
         tablePanel.add(tableScroller);
         this.setSize(800, 600);
         this.setLocationRelativeTo(null);
@@ -80,9 +77,9 @@ public class ManageActivityUI extends javax.swing.JFrame {
         this.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
         this.getContentPane().add(tablePanel, BorderLayout.CENTER);
     }
-    
+
     public class BackButtonListener implements ActionListener {
-        
+
         @Override
         public void actionPerformed(ActionEvent e) {
             Object obj = e.getSource();
@@ -101,11 +98,16 @@ public class ManageActivityUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         backBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(181, 181, 255));
+
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 255, 255));
         jLabel1.setText("Manage Activities ");
 
         backBtn.setText("Back");
@@ -115,28 +117,38 @@ public class ManageActivityUI extends javax.swing.JFrame {
             }
         });
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(backBtn)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(96, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(93, 93, 93))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 329, Short.MAX_VALUE)
+                .addComponent(backBtn)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(143, 143, 143)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(backBtn)))
-                .addContainerGap(142, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 213, Short.MAX_VALUE)
-                .addComponent(backBtn)
-                .addGap(21, 21, 21))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -184,5 +196,6 @@ public class ManageActivityUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton backBtn;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

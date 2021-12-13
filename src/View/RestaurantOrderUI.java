@@ -62,6 +62,7 @@ public class RestaurantOrderUI extends javax.swing.JFrame {
 
     /**
      * gets card number value
+     *
      * @return returns card number
      */
     public JTextField getCardNumberValue() {
@@ -70,6 +71,7 @@ public class RestaurantOrderUI extends javax.swing.JFrame {
 
     /**
      * sets card number value
+     *
      * @param cardNumberValue String for card number
      */
     public void setCardNumberValue(String cardNumberValue) {
@@ -78,6 +80,7 @@ public class RestaurantOrderUI extends javax.swing.JFrame {
 
     /**
      * gets cvv value
+     *
      * @return cvv value
      */
     public JTextField getCvvValue() {
@@ -86,6 +89,7 @@ public class RestaurantOrderUI extends javax.swing.JFrame {
 
     /**
      * sets cvv value
+     *
      * @param cvvValue String for cvv value
      */
     public void setCvvValue(String cvvValue) {
@@ -94,6 +98,7 @@ public class RestaurantOrderUI extends javax.swing.JFrame {
 
     /**
      * gets expiration value
+     *
      * @return expiration value
      */
     public JTextField getExpirationValue() {
@@ -102,12 +107,13 @@ public class RestaurantOrderUI extends javax.swing.JFrame {
 
     /**
      * sets expiration value
+     *
      * @param expirationValue JTextField for expirationValue
      */
     public void setExpirationValue(String expirationValue) {
         this.expirationValue.setText(expirationValue);
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
