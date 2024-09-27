@@ -5,55 +5,55 @@
  */
 package Model;
 
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.UUID;
+
 /**
  *
  * @author hayde
  */
 public class DayTicket extends Ticket {
-    
-    public DayTicket(double price, boolean paid, int ID, String startDate, int daysActive) {
-        super(price, paid, ID, startDate, daysActive);
+
+    private double price = 59.99;
+    private int daysActive = 1;
+    private String type = "Day";
+
+    public DayTicket(/*double price, boolean paid, UUID Id, LocalDate startDate, int daysActive, LocalDate expDate, String type*/) {
+//        super(price, paid, Id, startDate, daysActive, expDate, type);
+//        this.price = price;
+//        this.daysActive = daysActive;
+//        this.type = type;
     }
 
+    @Override
     public double getPrice() {
-        return getPrice();
+        return price;
     }
 
+    @Override
     public void setPrice(double price) {
-        this.setPrice(price);
+        this.price = price;
     }
 
-    public boolean isPaid() {
-        return isPaid();
-    }
-
-    public void setPaid(boolean paid) {
-        this.setPaid(paid);
-    }
-
-    public int getID() {
-        return getID();
-    }
-
-    public void setID(int ID) {
-        this.setID(ID);
-    }
-
-    public String getStartDate() {
-        return getStartDate();
-    }
-
-    public void setStartDate(String startDate) {
-        this.setStartDate(startDate);
-    }
-
+    @Override
     public int getDaysActive() {
-        return getDaysActive();
+        return daysActive;
     }
 
+    @Override
     public void setDaysActive(int daysActive) {
-        this.setDaysActive(daysActive);
+        this.daysActive = daysActive;
     }
-    
-    
+
+    @Override
+    public String getType() {
+        return type;
+    }
+
+    @Override
+    public void setType(String type) {
+        this.type = type;
+    }
+
 }

@@ -16,52 +16,51 @@ import View.NavigationUI;
  * @author meky
  */
 public class ActivityTestHarness {
-    
-      Timeslot firstMorning = new Timeslot("8:00am", "8:30am");
 
-      Activity nitro = new Activity("Nitro", 200, "Roller coaster ride", firstMorning);
-      
-      // Admin Navigation interface and logic
-      AdminNavigationController adminNavCntrl = new AdminNavigationController();
-      AdminNavigation adminNavUI = new AdminNavigation(adminNavCntrl);
-      
-      public void testModelActivity() {
-          
-          System.out.println(firstMorning.getStartTime());
-          
-          System.out.println(firstMorning.getEndTime());
-          
-          firstMorning.setStartTime("9:00am");
-          
-          firstMorning.setEndTime("9:30am");
-          
-          System.out.println(firstMorning.getStartTime());
+    Timeslot firstMorning = new Timeslot("8:00am", "8:30am");
 
-          System.out.println(firstMorning.getEndTime());
+    Activity nitro = new Activity("Nitro", 200, "Roller coaster ride", firstMorning);
 
-          System.out.println(nitro.getCapacity());
+    // Admin Navigation interface and logic
+    AdminNavigationController adminNavCntrl = new AdminNavigationController();
+    AdminNavigation adminNavUI = new AdminNavigation(adminNavCntrl);
 
-          System.out.println(nitro.getDescription());
+    public void testModelActivity() {
 
-          System.out.println(nitro.getName());
+        System.out.println(firstMorning.getStartTime());
 
-          System.out.println(nitro.getTimeslot());
+        System.out.println(firstMorning.getEndTime());
 
-          System.out.println(nitro.toString());
-          
-      }
-      
-       // Package -> Controller -> AdminNavigationController
-       public void ACTestStubs() {
-            boolean connectStatus = adminNavCntrl.connectedUserClient(adminNavUI);
-            System.out.println("  AdminNavigationController.connectUserClient output: " + connectStatus);
-       }
-       
-       // Package -> View -> AdminNavigationUI
-       public void ANUITestStubs() {
-            boolean boolStatus = adminNavUI.connectedRestServer(adminNavCntrl);
-            System.out.println("  AdminNavigationUI.connectRestServer output: " + boolStatus);
-       }
+        firstMorning.setStartTime("9:00am");
 
-      
+        firstMorning.setEndTime("9:30am");
+
+        System.out.println(firstMorning.getStartTime());
+
+        System.out.println(firstMorning.getEndTime());
+
+        System.out.println(nitro.getCapacity());
+
+        System.out.println(nitro.getDescription());
+
+        System.out.println(nitro.getName());
+
+        System.out.println(nitro.getTimeslot());
+
+        System.out.println(nitro.toString());
+
+    }
+
+    // Package -> Controller -> AdminNavigationController
+    public void ACTestStubs() {
+        boolean connectStatus = adminNavCntrl.connectedUserClient(adminNavUI);
+        System.out.println("  AdminNavigationController.connectUserClient output: " + connectStatus);
+    }
+
+    // Package -> View -> AdminNavigationUI
+    public void ANUITestStubs() {
+        boolean boolStatus = adminNavUI.connectedRestServer(adminNavCntrl);
+        System.out.println("  AdminNavigationUI.connectRestServer output: " + boolStatus);
+    }
+
 }

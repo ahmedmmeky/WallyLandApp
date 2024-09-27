@@ -138,7 +138,7 @@
                                               </Group>
                                               <Group type="102" attributes="0">
                                                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                                                   <Component id="orderTotalAmt" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <Component id="cvvLabel" min="-2" max="-2" attributes="0"/>

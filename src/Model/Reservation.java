@@ -7,12 +7,12 @@ package Model;
 
 import java.util.ArrayList;
 
-
 /**
  *
  * @author jfields
  */
 public class Reservation {
+
     private ArrayList<Activity> activityList;
     private String activity;
     private int numGuests;
@@ -21,6 +21,7 @@ public class Reservation {
 
     /**
      * Constructor for Reservation
+     *
      * @param activityList an ArrayList of the available Activities
      * @param activity a String with the name of the chosen activity
      * @param numGuests an integer of the number of guests for the reservation
@@ -45,9 +46,10 @@ public class Reservation {
         this.time = new Timeslot("", "");
         this.date = "";
     }
-    
+
     /**
      * getter for list of Activities
+     *
      * @return activityList (an ArrayList of activities)
      */
     public ArrayList<Activity> getActivityList() {
@@ -56,6 +58,7 @@ public class Reservation {
 
     /**
      * getter for type of activity
+     *
      * @return activity (a String of the activity's name)
      */
     public String getActivity() {
@@ -64,6 +67,7 @@ public class Reservation {
 
     /**
      * setter for the type of activity
+     *
      * @param activity sets the String variable for activity name
      */
     public void setActivity(String activity) {
@@ -72,6 +76,7 @@ public class Reservation {
 
     /**
      * getter for the number of guests
+     *
      * @return numGuests (an int for number of guests for reservation)
      */
     public int getNumGuests() {
@@ -80,6 +85,7 @@ public class Reservation {
 
     /**
      * setter for number of guests
+     *
      * @param numGuests sets the int value with the number of guests
      */
     public void setNumGuests(int numGuests) {
@@ -88,6 +94,7 @@ public class Reservation {
 
     /**
      * getter for time
+     *
      * @return time (a TimeSlot object that stores the available times)
      */
     public Timeslot getTime() {
@@ -96,6 +103,7 @@ public class Reservation {
 
     /**
      * setter for time
+     *
      * @param time sets the TimeSlot value the desired time
      */
     public void setTime(Timeslot time) {
@@ -104,6 +112,7 @@ public class Reservation {
 
     /**
      * getter for date
+     *
      * @return date (a String of the reservation's date)
      */
     public String getDate() {
@@ -112,6 +121,7 @@ public class Reservation {
 
     /**
      * setter for date
+     *
      * @param date sets the String variable for reservation's date
      */
     public void setDate(String date) {
@@ -121,13 +131,13 @@ public class Reservation {
     /**
      * Method to submit Reservation
      */
-    public void submitReservation(){
-        
+    public void submitReservation() {
+
     }
-    
+
     @Override
     public String toString() {
         return "Reservation{" + "activity=" + activity + ", numGuests=" + numGuests + ", time=" + time + ", date=" + date + '}';
     }
-    
+
 }

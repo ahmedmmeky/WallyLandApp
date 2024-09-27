@@ -10,13 +10,15 @@ package Model;
  * @author fdadebo
  */
 public class User {
+
     private String email;
     private String firstName;
     private String lastName;
     private String password;
-    
+
     /**
      * Constructor for User
+     *
      * @param email a String with the user's email
      * @param firstName a String with the user's first name
      * @param lastName a String with the user's last name
@@ -28,7 +30,7 @@ public class User {
         this.lastName = lastName;
         this.password = password;
     }
-    
+
     /**
      * Empty Constructor User
      */
@@ -41,6 +43,7 @@ public class User {
 
     /**
      * getter for email
+     *
      * @return email
      */
     public String getEmail() {
@@ -49,6 +52,7 @@ public class User {
 
     /**
      * setter for email
+     *
      * @param email sets the String variable with user's email
      */
     public void setEmail(String email) {
@@ -57,6 +61,7 @@ public class User {
 
     /**
      * getter for first name
+     *
      * @return firstName
      */
     public String getFirstName() {
@@ -65,6 +70,7 @@ public class User {
 
     /**
      * setter for first name
+     *
      * @param firstName sets String with user's first name
      */
     public void setFirstName(String firstName) {
@@ -73,6 +79,7 @@ public class User {
 
     /**
      * getter for last name
+     *
      * @return lastName
      */
     public String getLastName() {
@@ -81,6 +88,7 @@ public class User {
 
     /**
      * setter for last name
+     *
      * @param lastName sets String with user's last name
      */
     public void setLastName(String lastName) {
@@ -89,6 +97,7 @@ public class User {
 
     /**
      * getter for password
+     *
      * @return password
      */
     public String getPassword() {
@@ -97,11 +106,11 @@ public class User {
 
     /**
      * setter for password
+     *
      * @param password set String with user's password
      */
     public void setPassword(String password) {
         this.password = password;
     }
-  
-    
+
 }

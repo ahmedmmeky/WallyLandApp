@@ -12,6 +12,7 @@ import java.util.List;
  * @author meky
  */
 public class ActivityList {
+
     private List<Activity> activityList = new ArrayList<>();
     private Activity activity;
 
@@ -20,30 +21,31 @@ public class ActivityList {
         buildWorkoutList();
         printWorkoutList();
     }
-    
-    public void setFirstWorkout(){
+
+    public void setFirstWorkout() {
         String activityName = "King Da Ka";
         int capactity = 200;
         String description = "The fastest and tallest roller coaster in the world";
         activity = new Activity(activityName, capactity, description);
     }
-    public void buildWorkoutList(){
+
+    public void buildWorkoutList() {
         this.activityList.add(new Activity("Nitro",
                 300, "A fast and fun roller coaster"));
         this.activityList.add(activity);
 
     }
-    
+
     public void printWorkoutList() {
         for (Activity activity : activityList) {
             System.out.println(activity.toString());
         }
     }
-    
+
     public void addActivity(Activity activity) {
         activityList.add(activity);
     }
-    
+
     public void removeActivity(Activity activity) {
         activityList.remove(activity);
     }
@@ -60,6 +62,5 @@ public class ActivityList {
     public String toString() {
         return "ActivityList{" + "activityList=" + activityList + '}';
     }
-    
-    
+
 }

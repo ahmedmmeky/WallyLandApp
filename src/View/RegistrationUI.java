@@ -27,15 +27,15 @@ public class RegistrationUI extends javax.swing.JFrame {
     public RegistrationUI() {
         initComponents();
     }
-     public RegistrationUI  (RegistrationController aThis) {
+
+    public RegistrationUI(RegistrationController aThis) {
         initComponents(); //To change body of generated methods, choose Tools | Templates.
     }
-     
-     public boolean connectedRestServer(RegistrationController adminNavController) {
+
+    public boolean connectedRestServer(RegistrationController adminNavController) {
         registratCntrl = adminNavController;
         return true;
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -175,7 +175,7 @@ public class RegistrationUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+
     private void Email(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Email
         // TODO add your handling code here:
     }//GEN-LAST:event_Email
@@ -189,7 +189,7 @@ public class RegistrationUI extends javax.swing.JFrame {
     }//GEN-LAST:event_FirstName
 
     private void SignUp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUp1ActionPerformed
-       
+
 //       JSONObject obj = new JSONObject();
 //       JSONArray jrr = new JSONArray();
 //       JSONParser jp = new JSONParser();

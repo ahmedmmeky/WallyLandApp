@@ -12,10 +12,13 @@ import javax.swing.JTextField;
  * @author bpardee
  */
 public class RestaurantOrderUI extends javax.swing.JFrame {
+
     private RestaurantMenuUI menuUI = new RestaurantMenuUI(new RestaurantController(new NavigationController()), new Restaurants());
     private RestaurantOrderController orderCntrl;
+
     /**
      * Creates new form RestaurantOrderUI
+     *
      * @param restCntrl references the Restaurant Order Controller class
      * @param restaurant references the Restaurant class
      */
@@ -23,23 +26,25 @@ public class RestaurantOrderUI extends javax.swing.JFrame {
         initComponents();
         progressBar = new javax.swing.JProgressBar(0, 100);
         jPanel3.add(progressBar);
-        progressBar.setSize(380,30);
+        progressBar.setSize(380, 30);
         progressBar.setValue(50);
         progressBar.setVisible(true);
     }
-    
+
     /**
      * Method to connect to our RestaurantOrderController
+     *
      * @param orderController a view order
      * @return the connection status
-     */   
+     */
     public boolean connectedRestServer(RestaurantOrderController orderController) {
-         orderCntrl = orderController;
+        orderCntrl = orderController;
         return true;
     }
 
     /**
      * getter for order total
+     *
      * @return JTextField orderTotalAmt
      */
     public JLabel getOrderTotalAmt() {
@@ -48,6 +53,7 @@ public class RestaurantOrderUI extends javax.swing.JFrame {
 
     /**
      * sets order total amount
+     *
      * @param orderTotal JLabel for order total
      */
     public void setOrderTotalAmt(String orderTotal) {
@@ -56,6 +62,7 @@ public class RestaurantOrderUI extends javax.swing.JFrame {
 
     /**
      * gets card number value
+     *
      * @return returns card number
      */
     public JTextField getCardNumberValue() {
@@ -64,6 +71,7 @@ public class RestaurantOrderUI extends javax.swing.JFrame {
 
     /**
      * sets card number value
+     *
      * @param cardNumberValue String for card number
      */
     public void setCardNumberValue(String cardNumberValue) {
@@ -72,6 +80,7 @@ public class RestaurantOrderUI extends javax.swing.JFrame {
 
     /**
      * gets cvv value
+     *
      * @return cvv value
      */
     public JTextField getCvvValue() {
@@ -80,6 +89,7 @@ public class RestaurantOrderUI extends javax.swing.JFrame {
 
     /**
      * sets cvv value
+     *
      * @param cvvValue String for cvv value
      */
     public void setCvvValue(String cvvValue) {
@@ -88,6 +98,7 @@ public class RestaurantOrderUI extends javax.swing.JFrame {
 
     /**
      * gets expiration value
+     *
      * @return expiration value
      */
     public JTextField getExpirationValue() {
@@ -96,12 +107,13 @@ public class RestaurantOrderUI extends javax.swing.JFrame {
 
     /**
      * sets expiration value
+     *
      * @param expirationValue JTextField for expirationValue
      */
     public void setExpirationValue(String expirationValue) {
         this.expirationValue.setText(expirationValue);
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -234,7 +246,7 @@ public class RestaurantOrderUI extends javax.swing.JFrame {
                                                 .addComponent(cardNumberValue, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(jLabel2)
-                                                .addGap(41, 41, 41)
+                                                .addGap(38, 38, 38)
                                                 .addComponent(orderTotalAmt))
                                             .addComponent(cvvLabel)
                                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))))

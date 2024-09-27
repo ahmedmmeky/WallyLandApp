@@ -5,23 +5,31 @@
  */
 package Model;
 
+import java.util.Date;
+import java.time.LocalDate;
+import java.util.UUID;
+
 /**
  *
- * @author Javod Fields
+ * @author Hayden
  */
-public class Ticket {
-    private double price;
-    private boolean paid;
-    private int ID;
-    private String startDate;
-    private int daysActive;
+public abstract class Ticket {
 
-    public Ticket(double price, boolean paid, int ID, String startDate, int daysActive) {
-        this.price = price;
-        this.paid = paid;
-        this.ID = ID;
-        this.startDate = startDate;
-        this.daysActive = daysActive;
+    protected double price;
+    protected UUID Id;
+    protected LocalDate startDate = LocalDate.now();
+    protected int daysActive;
+    protected LocalDate expDate = startDate.plusDays(daysActive);
+    protected String type;
+
+    public Ticket(/*double price, boolean paid, UUID Id, LocalDate startDate, int daysActive, LocalDate expDate, String type*/) {
+//        this.price = price;
+//        this.paid = paid;
+//        this.Id = Id;
+//        this.startDate = startDate;
+//        this.daysActive = daysActive;
+//        this.expDate = expDate;
+//        this.type = type;
     }
 
     public double getPrice() {
@@ -32,28 +40,28 @@ public class Ticket {
         this.price = price;
     }
 
-    public boolean isPaid() {
-        return paid;
+    public UUID getId() {
+        return Id;
     }
 
-    public void setPaid(boolean paid) {
-        this.paid = paid;
+    public void setId(UUID Id) {
+        this.Id = Id;
     }
 
-    public int getID() {
-        return ID;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
-    }
-
-    public String getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(String startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
+    }
+
+    public LocalDate getExpDate() {
+        return expDate;
+    }
+
+    public void setExpDate(LocalDate expDate) {
+        this.expDate = expDate;
     }
 
     public int getDaysActive() {
@@ -63,6 +71,13 @@ public class Ticket {
     public void setDaysActive(int daysActive) {
         this.daysActive = daysActive;
     }
-    
-    
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
 }

@@ -5,8 +5,6 @@
 package Controller;
 
 import View.AdminNavigation;
-import View.CreateActivityUI;
-import View.NavigationUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -14,34 +12,33 @@ import java.awt.event.ActionListener;
  *
  * @author meky
  */
-public class AdminNavigationController implements ActionListener{
+public class AdminNavigationController implements ActionListener {
 
     private AdminNavigation adminNavUI;
-   // private CreateActivityUI createActivityUI;
+    // private CreateActivityUI createActivityUI;
     private CreateActivityController createActivityCntl;
     //private LoginController loginCntrl;
-    
     private ManageActivityController manageActivityCntl;
-    
     private LoginController loginCntl;
-    
+
     /**
-     * Constructor for the Navigation Controller
-     * used to instantiate aspects of the controller
+     * Constructor for the Navigation Controller used to instantiate aspects of
+     * the controller
      */
     public AdminNavigationController() {
-        adminNavUI = new AdminNavigation(this);
+        adminNavUI = new AdminNavigation();
         adminNavUI.createActivityBtn.addActionListener(this);
         adminNavUI.manageActivitiesBtn.addActionListener(this);
         adminNavUI.backBtn.addActionListener(this);
         adminNavUI.setVisible(true);
     }
-    
-     /**
+
+    /**
      * Method to 'connect' to our user
+     *
      * @param navInterface a user interface which can view the main menu
      * @return the connection status
-     */    
+     */
     public boolean connectedUserClient(AdminNavigation navInterface) {
         adminNavUI = navInterface;
         return true;
@@ -60,7 +57,5 @@ public class AdminNavigationController implements ActionListener{
             loginCntl = new LoginController();
         }
     }
-    
-    
-    
+
 }

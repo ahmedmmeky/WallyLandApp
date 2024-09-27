@@ -7,6 +7,7 @@ import java.util.ArrayList;
  * @author bpardee
  */
 public class Restaurants {
+
     private String restaurantName;
     private ArrayList<String> menuItemNames = new ArrayList<>();
     private ArrayList<Double> menuItemPrices = new ArrayList<>();
@@ -14,6 +15,7 @@ public class Restaurants {
 
     /**
      * Constructor for Restaurants
+     *
      * @param restaurantName a String with the restaurant's name
      * @param menuItemNames an ArrayList of Strings of menu item names
      * @param menuItemPrices an ArrayList of Doubles of menu item prices
@@ -25,7 +27,7 @@ public class Restaurants {
         this.menuItemPrices = menuItemPrices;
         this.orderTotal = orderTotal;
     }
-    
+
     /**
      * Default Constructor
      */
@@ -38,6 +40,7 @@ public class Restaurants {
 
     /**
      * getter for restaurant name
+     *
      * @return restaurantName (a string of the restaurant's name)
      */
     public String getRestaurantName() {
@@ -46,6 +49,7 @@ public class Restaurants {
 
     /**
      * setter for restaurant name
+     *
      * @param restaurantName sets the String variable for restaurant name
      */
     public void setRestaurantName(String restaurantName) {
@@ -54,6 +58,7 @@ public class Restaurants {
 
     /**
      * getter for menu item names
+     *
      * @return menuItemNames (an ArrayList of menu item names)
      */
     public ArrayList<String> getMenuItemNames() {
@@ -62,6 +67,7 @@ public class Restaurants {
 
     /**
      * setter for menu item names
+     *
      * @param menuItemNames sets the ArrayList values with menu item names
      */
     public void setMenuItemNames(ArrayList<String> menuItemNames) {
@@ -70,6 +76,7 @@ public class Restaurants {
 
     /**
      * getter for menu item prices
+     *
      * @return menuItemPrices (an ArrayList of menu item prices)
      */
     public ArrayList<Double> getMenuItemPrices() {
@@ -78,6 +85,7 @@ public class Restaurants {
 
     /**
      * setter for menu item prices
+     *
      * @param menuItemPrices sets the ArrayList values with menu item prices
      */
     public void setMenuItemPrices(ArrayList<Double> menuItemPrices) {
@@ -86,6 +94,7 @@ public class Restaurants {
 
     /**
      * getter for order total
+     *
      * @return orderTotal (a double of total order price)
      */
     public double getOrderTotal() {
@@ -94,6 +103,7 @@ public class Restaurants {
 
     /**
      * setter for order total
+     *
      * @param orderTotal sets the double value with a total order amount
      */
     public void setOrderTotal(double orderTotal) {
@@ -104,5 +114,5 @@ public class Restaurants {
     public String toString() {
         return "Restaurants{" + "restaurantName=" + restaurantName + ", menuItemNames=" + menuItemNames + ", menuItemPrices=" + menuItemPrices + ", orderTotal=" + orderTotal + '}';
     }
-   
+
 }
